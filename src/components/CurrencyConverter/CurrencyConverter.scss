@@ -1,0 +1,65 @@
+@use "@scss/variables" as *;
+
+.CurrencyConverter {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 4px rgb(187, 187, 187, 0.2), 0 0 4px rgb(0, 0, 0, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgb(244, 244, 244, 0.8) 30%,
+    rgb(178, 178, 178, 0.8) 100%
+  );
+
+  color: $text-color-black;
+  font-size: $fs-m;
+  font-weight: $fw-m;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__heading {
+    font-weight: $fw-m;
+
+    &--second {
+      font-size: $fs-m;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__button {
+    width: fit-content;
+    border: 0;
+    padding: 0;
+    background-color: inherit;
+    color: $text-color-white;
+
+    font-family: inherit;
+    font-size: $fs-m;
+    font-weight: $fw-b;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  @media (max-width: $max-width-tablet) {
+    &__container {
+      justify-content: center;
+    }
+  }
+}

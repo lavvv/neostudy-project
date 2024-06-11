@@ -1,0 +1,28 @@
+@use "@scss/variables" as *;
+
+.Button {
+  width: fit-content;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+
+  background-color: $btn-color-fill-blue;
+  color: #fff;
+  font-family: inherit;
+  font-weight: $fw-b;
+  cursor: pointer;
+  line-height: $lh-110;
+  letter-spacing: $ls-02;
+
+  &--tall {
+    padding: 1rem 1rem;
+  }
+
+  &--borderRadius--m {
+    border-radius: 1rem;
+  }
+
+  &:hover {
+    background-color: #7795c0;
+  }
+}

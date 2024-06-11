@@ -1,0 +1,50 @@
+// Colors
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$bg-color-light: hsl(245, 100%, 98%);
+$text-color-black: hsl(0, 0%, 0%);
+$text-color-gray-dark: hsl(0, 0%, 11%);
+$text-color-gray-dark-2: #2d3748;
+$text-color-gray-dark-3: #4f5665;
+$text-color-gray-medium: hsl(0, 0%, 50%);
+$text-color-orange: hsl(29, 84%, 52%);
+$text-color-yellow: hsl(49, 35%, 54%);
+$text-color-white: hsl(0, 0%, 100%);
+$header-logo-color: hsl(328, 53%, 46%);
+$btn-color-fill-blue: hsl(226, 100%, 50%);
+
+// Fonts
+$ff-main: "Ubuntu", sans-serif;
+$ff-second: "Rubik", sans-serif;
+$ff-third: "Nunito Sans", sans-serif;
+
+// Font sizes
+$fs-xxs: 0.5rem;
+$fs-xs: 0.75rem;
+$fs-s: 0.875rem;
+$fs-r: 1rem;
+$fs-m: 1.25rem;
+$fs-l: 1.5rem;
+$fs-xl: 2rem;
+$fs-xxl: 3rem;
+
+// Font weights
+$fw-r: 400;
+$fw-m: 500;
+$fw-b: 700;
+
+// Line heights
+$lh-110: 1.1;
+$lh-120: 1.2;
+$lh-150: 1.5;
+$lh-170: 1.7;
+$lh-190: 1.9;
+$lh-300: 3;
+
+// Letter spacing
+$ls-02: 0.02em;
+
+// Media queries
+$max-width-desktop: 1300px;
+$max-width-tablet: 920px;
+$max-width-mobile: 500px;
