@@ -1,24 +1,23 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
 .Button {
-  width: fit-content;
   padding: 0.8rem 1rem;
   border: 0;
   border-radius: 0.5rem;
 
-  background-color: $btn-color-fill-blue;
+  background-color: $clr-blue;
   color: #fff;
   font-family: inherit;
   font-weight: $fw-b;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  line-height: $lh-110;
-  letter-spacing: $ls-02;
 
   &--tall {
     padding: 1rem 1rem;
   }
 
-  &--borderRadius--m {
+  &--border-radius-m {
     border-radius: 1rem;
   }
 

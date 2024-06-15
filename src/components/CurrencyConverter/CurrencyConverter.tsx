@@ -1,18 +1,18 @@
-import { TCurrencyConverterRequest } from "@api/currencyConverter/types";
+import { TGetExchangeRateParams } from "@api/currencyConverter/api";
 import Button from "@components/ui/Button";
 import { getCurrentDate } from "@utils/getCurrentDate";
-import { CurrencyConverterList } from "./CurrencyConverterList";
+import ExchangeRatesList from "./components/ExchangeRatesList";
 
-import bankImage from "@assets/images/Index/bank.svg";
+import bankImg from "@img/home/bank.svg";
 import "./CurrencyConverter.scss";
 
 type TCurrencyConverterListProps = {
-  requestParams?: TCurrencyConverterRequest[];
+  params?: TGetExchangeRateParams[];
   updateIntervalMinutes?: number;
 };
 
 export default function CurrencyConverter({
-  requestParams,
+  params,
   updateIntervalMinutes = 15,
 }: TCurrencyConverterListProps) {
   const currentDate = getCurrentDate();
@@ -28,24 +28,18 @@ export default function CurrencyConverter({
         </p>
       </section>
 
-      <section className="CurrencyConverter__list">
-        <h3 className="CurrencyConverter__heading CurrencyConverter__heading--second">
-          Currency
-        </h3>
-        <div className="CurrencyConverter__container">
-          <CurrencyConverterList
-            requestParams={requestParams}
-            updateIntervalMinutes={updateIntervalMinutes}
-          />
-          <figure className="CurrencyConverter__figure">
-            <img
-              className="CurrencyConverter__image"
-              src={bankImage}
-              alt="Bank"
-            />
-          </figure>
-        </div>
-      </section>
+      <h3 className="CurrencyConverter__heading CurrencyConverter__heading--second">
+        Currency
+      </h3>
+      <div className="CurrencyConverter__listContainer">
+        <ExchangeRatesList
+          params={params}
+          updateIntervalMinutes={updateIntervalMinutes}
+        />
+        <figure className="CurrencyConverter__figure">
+          <img className="CurrencyConverter__image" src={bankImg} alt="Bank" />
+        </figure>
+      </div>
 
       <Button classes="Button CurrencyConverter__button">All courses</Button>
     </article>

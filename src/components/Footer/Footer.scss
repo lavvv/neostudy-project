@@ -1,10 +1,11 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
 .Footer {
   padding: 6rem 0;
   background-color: #e7e7e7;
-  color: $text-color-black;
-  line-height: $lh-150;
+  color: $clr-black;
+  font-weight: $fw-m;
+  line-height: 1.5;
 
   &__container {
     max-width: $max-width-desktop;
@@ -38,17 +39,15 @@
   }
 
   &__email {
-    font-weight: $fw-m;
-    letter-spacing: $ls-02;
-    color: $text-color-gray-dark-2;
+    letter-spacing: 0.02em;
+    color: $clr-gray-dark-2;
   }
 
   &__navbar {
     row-gap: 0.5rem;
     column-gap: 2rem;
-    font-weight: 500;
     font-size: 1rem;
-    letter-spacing: $ls-02;
+    letter-spacing: 0.02em;
     color: #000;
 
     .Navbar__link {
@@ -59,24 +58,19 @@
   }
 
   &__divider {
-    margin: 2rem 0;
+    margin-block: 2rem;
     border: 2px solid rgb(255, 255, 255, 0.81);
   }
 
-  &__cookies {
+  &__info {
     margin-bottom: 0;
-    color: $text-color-gray-dark-2;
-    font-weight: $fw-m;
-    letter-spacing: $ls-02;
+    color: $clr-gray-dark-2;
+    letter-spacing: 0.02em;
   }
 
   @media screen and (max-width: $max-width-mobile) {
     &__top {
       flex-direction: column;
-    }
-
-    &__contacts {
-      text-align: center;
     }
 
     &__navbar {

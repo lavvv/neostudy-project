@@ -1,23 +1,22 @@
 import Navbar from "@components/Navbar/Navbar";
 import { footerRoutes } from "@routes/routes";
 
-import neoflexLogo from "@assets/images/Index/logo 1.png";
+import neoflexLogo from "@img/logo-neoflex.png";
 import "./Footer.scss";
 
 export default function Footer() {
   return (
     <footer className="Footer">
       <div className="Footer__container">
-        <div className="Footer__top">
+        <section className="Footer__top">
           <a href="https://www.neoflex.ru" target="_blank" rel="noreferrer">
-            <figure className="Footer__logo">
-              <img
-                src={neoflexLogo}
-                alt="Neoflex logo"
-                width="159"
-                height="50"
-              />
-            </figure>
+            <img
+              className="Footer__logo"
+              src={neoflexLogo}
+              alt="Neoflex logo"
+              width={159}
+              height={50}
+            />
           </a>
           <div className="Footer__contacts">
             <a className="Footer__phone" href="tel:+74959842513">
@@ -27,15 +26,15 @@ export default function Footer() {
               info@neoflex.ru
             </a>
           </div>
-        </div>
+        </section>
 
-        <div className="Footer__links">
+        <section className="Footer__links">
           <Navbar classes="Navbar Footer__navbar" links={footerRoutes} />
-        </div>
+        </section>
 
-        <div className="Footer__divider"></div>
+        <hr className="Footer__divider"></hr>
 
-        <p className="Footer__cookies">
+        <p className="Footer__info">
           We use cookies to personalize our services and improve the user
           experience of our website. Cookies are small files containing
           information about previous visits to a website. If you do not want to

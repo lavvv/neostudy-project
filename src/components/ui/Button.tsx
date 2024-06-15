@@ -1,18 +1,18 @@
 import "./Button.scss";
 
-type TButtonProps = {
+type TButtonComponentProps = {
   children: React.ReactNode;
   classes?: string;
-  btnType?: "button" | "submit" | "reset";
+  onPress?: () => unknown;
 };
 
 export default function Button({
   children,
   classes,
-  btnType = "button",
-}: TButtonProps) {
+  onPress,
+}: TButtonComponentProps) {
   return (
-    <button className={classes} type={btnType}>
+    <button className={classes} onClick={onPress}>
       {children}
     </button>
   );

@@ -1,6 +1,6 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
-.pageSection {
+.pageBlock {
   &--flex {
     display: flex;
 
@@ -23,10 +23,7 @@
   }
 }
 
-.indexContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.HomeContainer {
   max-width: $max-width-desktop;
   margin: auto;
   padding: 8rem 0 6rem;
@@ -46,6 +43,7 @@
     }
 
     &__button {
+      max-width: max-content;
       margin-bottom: 2.5rem;
     }
 
@@ -78,16 +76,16 @@
     }
 
     &__text {
-      line-height: $lh-190;
+      line-height: 1.9;
     }
 
     &__list {
       position: relative;
       padding: 0 2rem;
-      list-style-image: url("@assets/images/Index/check mark.svg");
-      line-height: $lh-300;
+      list-style-image: url("@img/icons/check-mark.svg");
+      line-height: 3;
       font-size: $fs-s;
-      color: $text-color-gray-dark-3;
+      color: $clr-gray-dark-3;
     }
   }
 
@@ -96,7 +94,7 @@
       margin-bottom: 0;
       font-weight: $fw-m;
       font-size: $fs-xl;
-      line-height: $lh-170;
+      line-height: 1.7;
     }
 
     &__figcaption {
@@ -107,12 +105,18 @@
     }
   }
 
+  .news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .support {
-    letter-spacing: $ls-02;
+    letter-spacing: 0.02em;
 
     &__heading {
       font-size: $fs-l;
-      color: $text-color-orange;
+      color: $clr-orange;
 
       &--second {
         margin: 1rem 0;
@@ -127,21 +131,18 @@
       font-weight: $fw-m;
     }
 
-    &__formContainer {
+    &__form {
       display: flex;
+      align-items: center;
       padding: 1.5rem 2rem;
 
       border-radius: 1.25rem;
       box-shadow: 0 10px 20px 0 rgba(54, 58, 120, 0.1);
-      background-color: $white;
+      background-color: $clr-white;
 
       &:focus-within {
-        outline: 2px solid $black;
+        outline: 2px solid $clr-black;
       }
-    }
-
-    &__inputContainer {
-      display: flex;
     }
 
     &__input {
@@ -151,7 +152,7 @@
       color: #9092b0;
       font-family: $ff-third;
       font-size: $fs-m;
-      letter-spacing: $ls-02;
+      letter-spacing: 0.02em;
 
       &:focus {
         outline: none;
@@ -175,29 +176,24 @@
     }
   }
 
-  @media (max-width: $max-width-mobile) {
+  @media (max-width: $max-width-tablet) {
     padding-top: 3rem;
-  }
-}
 
-@media (max-width: $max-width-tablet) {
-  .creditCard,
-  .features {
-    flex-direction: column;
-    align-items: center;
-
-    &__desc {
-      align-items: center;
-    }
-  }
-}
-
-@media (max-width: $max-width-mobile) {
-  .support {
-    &__formContainer {
+    .creditCard,
+    .features {
       flex-direction: column;
-      gap: 0.5rem;
       align-items: center;
+
+      &__desc {
+        align-items: center;
+      }
+    }
+
+    .support__form {
+      @media (max-width: $max-width-mobile) {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
   }
 }

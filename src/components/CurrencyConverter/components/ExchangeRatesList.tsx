@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { DEFAULT_REQUEST_PARAMS } from "@api/currencyConverter/options";
-import { getExchangeRatesList } from "@components/CurrencyConverter/CurrencyConverterGetList";
+import { DEFAULT_PARAMS } from "@api/currencyConverter/options";
+import { getExchangeRatesList } from "@components/CurrencyConverter/helpers/getExchangeRatesList";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
-import "./CurrencyConverterList.scss";
+import { setUpdateInterval } from "../helpers/setUpdateInterval";
+
+import "./ExchangeRatesList.scss";
 
 type TCurrencyConverterListItem = {
   from: string;
@@ -11,45 +13,41 @@ type TCurrencyConverterListItem = {
   key: string;
 };
 
-export function CurrencyConverterList({
-  requestParams = DEFAULT_REQUEST_PARAMS,
+export default function ExchangeRatesList({
+  params = DEFAULT_PARAMS,
   updateIntervalMinutes = 15,
 }) {
-  const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
   const [exchangeRates, setExchangeRates] =
     useState<TCurrencyConverterListItem[]>();
+  const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
 
   useEffect(() => {
     const controller = new AbortController();
 
     const setRates = function () {
-      getExchangeRatesList(requestParams, controller)
+      getExchangeRatesList(params, controller)
         .then((rates: TCurrencyConverterListItem[]) => {
           return setExchangeRates([...rates]);
         })
-        .catch((error) => console.error(error));
+        .catch((error) => console.warn(error));
     };
 
     setRates();
 
-    const listUpdateIntervalId = setInterval(() => {
-      setRates();
-    }, updateIntervalMs);
+    const listUpdateIntervalId = setUpdateInterval(setRates, updateIntervalMs);
 
     return () => {
       controller.abort();
       clearInterval(listUpdateIntervalId);
     };
-  }, [requestParams, updateIntervalMs]);
+  }, [params, updateIntervalMs]);
 
   return (
-    <ul className="CurrencyConverterList">
+    <ul className="ExchangeRatesList">
       {exchangeRates
         ? exchangeRates.map(({ from, rate, key }) => (
             <li key={key}>
-              <span className="CurrencyConverterList__currencyFrom">
-                {from}:
-              </span>
+              <span className="ExchangeRatesList__currencyFrom">{from}:</span>
               {rate}
             </li>
           ))

@@ -1,10 +1,10 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
 .Header {
   padding: 1rem 0rem;
   font-weight: $fw-b;
-  line-height: $lh-110;
-  letter-spacing: $ls-02;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
 
   &__container {
     display: flex;
@@ -16,12 +16,11 @@
   }
 
   &__logo {
-    color: $header-logo-color;
+    color: $clr-magenta;
     font-size: $fs-l;
     text-decoration: none;
     text-shadow: 1px 1px 10px #00000020;
   }
-  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 
   &__menu {
     display: flex;

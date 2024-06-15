@@ -1,4 +1,4 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
 .Navbar {
   display: flex;
@@ -11,8 +11,10 @@
     color: inherit;
     text-decoration: none;
 
-    &:is(:focus, :hover, &--active) {
-      color: $text-color-yellow;
+    &:focus,
+    &:hover,
+    &--active {
+      color: $clr-yellow;
     }
   }
 }

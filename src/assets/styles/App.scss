@@ -1,0 +1,16 @@
+@use "@styles/variables" as *;
+
+.App {
+  background-color: $clr-bg-light;
+  font-family: $ff-main, $ff-sans;
+  font-weight: $fw-m;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,4 +1,4 @@
-@use "@scss/variables" as *;
+@use "@styles/variables" as *;
 
 .CurrencyConverter {
   display: flex;
@@ -12,7 +12,7 @@
     rgb(178, 178, 178, 0.8) 100%
   );
 
-  color: $text-color-black;
+  color: $clr-black;
   font-size: $fs-m;
   font-weight: $fw-m;
 
@@ -35,7 +35,7 @@
     flex-direction: column;
   }
 
-  &__container {
+  &__listContainer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -46,7 +46,7 @@
     border: 0;
     padding: 0;
     background-color: inherit;
-    color: $text-color-white;
+    color: $clr-white;
 
     font-family: inherit;
     font-size: $fs-m;
@@ -58,7 +58,7 @@
   }
 
   @media (max-width: $max-width-tablet) {
-    &__container {
+    &__listContainer {
       justify-content: center;
     }
   }

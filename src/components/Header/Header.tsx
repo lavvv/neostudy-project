@@ -8,6 +8,8 @@ import "./Header.scss";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
+  const burgerMenuIcon = <span>&#9776;</span>;
+  const burgerMenuCloseIcon = <span>&#x2715;</span>;
 
   return (
     <header className="Header">
@@ -26,7 +28,7 @@ export default function Header() {
             className="Header__toggleButton"
             onClick={() => setShowMenu((sm) => !sm)}
           >
-            {showMenu ? <span>&#x2715;</span> : <span>&#9776;</span>}
+            {showMenu ? burgerMenuCloseIcon : burgerMenuIcon}
           </button>
           {showMenu && (
             <>
