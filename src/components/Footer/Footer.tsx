@@ -29,7 +29,7 @@ export default function Footer() {
         </section>
 
         <section className="Footer__links">
-          <Navbar classes="Navbar Footer__navbar" links={footerRoutes} />
+          <Navbar className="Navbar Footer__navbar" links={footerRoutes} />
         </section>
 
         <hr className="Footer__divider"></hr>

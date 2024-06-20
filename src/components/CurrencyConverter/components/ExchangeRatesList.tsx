@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { DEFAULT_PARAMS } from "@api/currencyConverter/options";
-import { getExchangeRatesList } from "@components/CurrencyConverter/helpers/getExchangeRatesList";
-import { convertMinutesToMs } from "@utils/convertMinutesToMs";
-import { setUpdateInterval } from "../helpers/setUpdateInterval";
+import { DEFAULT_PARAMS } from "../api/options";
+import { convertMinutesToMs } from "../helpers/convertMinutesToMs";
+import { getExchangeRatesList } from "../helpers/getExchangeRatesList";
 
 import "./ExchangeRatesList.scss";
 
@@ -27,14 +26,18 @@ export default function ExchangeRatesList({
     const setRates = function () {
       getExchangeRatesList(params, controller)
         .then((rates: TCurrencyConverterListItem[]) => {
-          return setExchangeRates([...rates]);
+          if (!controller.signal.aborted) {
+            return setExchangeRates([...rates]);
+          }
         })
-        .catch((error) => console.warn(error));
+        .catch((error) => console.error(error));
     };
 
     setRates();
 
-    const listUpdateIntervalId = setUpdateInterval(setRates, updateIntervalMs);
+    const listUpdateIntervalId = setInterval(() => {
+      setRates();
+    }, updateIntervalMs);
 
     return () => {
       controller.abort();

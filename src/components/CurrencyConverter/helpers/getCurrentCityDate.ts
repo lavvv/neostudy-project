@@ -1,4 +1,4 @@
-export function getCurrentDate() {
+export function getCurrentCityDate() {
   const currentCity = Intl.DateTimeFormat()
     .resolvedOptions()
     .timeZone.split("/")[1];

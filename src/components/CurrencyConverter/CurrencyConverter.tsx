@@ -1,7 +1,7 @@
-import { TGetExchangeRateParams } from "@api/currencyConverter/api";
 import Button from "@components/ui/Button";
-import { getCurrentDate } from "@utils/getCurrentDate";
+import { TGetExchangeRateParams } from "./api/api";
 import ExchangeRatesList from "./components/ExchangeRatesList";
+import { getCurrentCityDate } from "./helpers/getCurrentCityDate";
 
 import bankImg from "@img/home/bank.svg";
 import "./CurrencyConverter.scss";
@@ -15,7 +15,7 @@ export default function CurrencyConverter({
   params,
   updateIntervalMinutes = 15,
 }: TCurrencyConverterListProps) {
-  const currentDate = getCurrentDate();
+  const currentCityDate = getCurrentCityDate();
 
   return (
     <article className="CurrencyConverter">
@@ -24,7 +24,7 @@ export default function CurrencyConverter({
           Exchange rate in internet bank
         </h2>
         <p>
-          Updates every {updateIntervalMinutes} minutes, {currentDate}
+          Updates every {updateIntervalMinutes} minutes, {currentCityDate}
         </p>
       </section>
 
@@ -41,7 +41,7 @@ export default function CurrencyConverter({
         </figure>
       </div>
 
-      <Button classes="Button CurrencyConverter__button">All courses</Button>
+      <Button className="Button CurrencyConverter__button">All courses</Button>
     </article>
   );
 }

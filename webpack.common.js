@@ -5,14 +5,13 @@ module.exports = {
   entry: "./src/index.tsx",
   resolve: {
     alias: {
-      "@api": path.resolve(__dirname, "src/api"),
-      "@components": path.resolve(__dirname, "src/components"),
       "@img": path.resolve(__dirname, "src/assets/img"),
+      "@styles": path.resolve(__dirname, "src/assets/styles"),
+      "@components": path.resolve(__dirname, "src/components"),
+      "@features": path.resolve(__dirname, "src/features"),
+      "@layouts": path.resolve(__dirname, "src/layouts"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
-      "@styles": path.resolve(__dirname, "src/assets/styles"),
-      "@utils": path.resolve(__dirname, "src/utils"),
-      "@lib": path.resolve(__dirname, "src/lib"),
     },
     extensions: [".tsx", ".ts", "..."],
   },
@@ -44,7 +43,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
-      favicon: path.resolve(__dirname, "src/assets/img/favicon/favicon.ico"),
+      favicon: path.resolve(__dirname, "src/assets/img/favicon.ico"),
     }),
   ],
   output: {

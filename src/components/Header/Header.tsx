@@ -18,8 +18,8 @@ export default function Header() {
           NeoBank
         </Link>
 
-        <Navbar classes="Navbar Header__navbar" links={headerRoutes} />
-        <Button classes="Button Button--tall Button--borderRadius--m Header__button Header__button--large">
+        <Navbar className="Navbar Header__navbar" links={headerRoutes} />
+        <Button className="Button Button--tall Button--borderRadius-m Header__button Header__button--large">
           Online Bank
         </Button>
 
@@ -33,10 +33,10 @@ export default function Header() {
           {showMenu && (
             <>
               <Navbar
-                classes="Navbar Header__navbar--small"
+                className="Navbar Header__navbar--small"
                 links={headerRoutes}
               />
-              <Button classes="Button Button--tall Button--borderRadius--m Header__button Header__button--small ">
+              <Button className="Button Button--tall Button--borderRadius-m Header__button Header__button--small ">
                 Online Bank
               </Button>
             </>

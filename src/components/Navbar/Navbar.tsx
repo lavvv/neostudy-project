@@ -8,16 +8,16 @@ type TLink = {
 };
 
 type TNavbarProps = {
-  classes?: string;
+  className?: string;
   links: TLink[];
 };
 
-export default function Navbar({ classes, links }: TNavbarProps) {
+export default function Navbar({ className, links }: TNavbarProps) {
   if (!links) return null;
 
   return (
     <nav>
-      <ul className={classes}>
+      <ul className={className}>
         {links.map(({ href, text }) => (
           <li key={href}>
             <NavLink
