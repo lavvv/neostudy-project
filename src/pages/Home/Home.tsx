@@ -1,5 +1,5 @@
-import CurrencyConverter from "@components/CurrencyConverter";
 import Button from "@components/ui/Button";
+import CurrencyConverter from "@features/CurrencyConverter";
 
 import cardImage1 from "@img/home/card-image1.png";
 import cardImage2 from "@img/home/card-image2.png";
