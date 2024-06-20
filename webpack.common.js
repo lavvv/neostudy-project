@@ -9,7 +9,6 @@ module.exports = {
       "@styles": path.resolve(__dirname, "src/assets/styles"),
       "@components": path.resolve(__dirname, "src/components"),
       "@features": path.resolve(__dirname, "src/features"),
-      "@layouts": path.resolve(__dirname, "src/layouts"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
     },

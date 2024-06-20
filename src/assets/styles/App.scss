@@ -1,6 +1,7 @@
 @use "@styles/variables" as *;
 
 .App {
+  margin-inline: 0.5rem;
   background-color: $clr-bg-light;
   font-family: $ff-main, $ff-sans;
   font-weight: $fw-m;
