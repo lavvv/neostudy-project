@@ -1,0 +1,28 @@
+{
+    "home": {
+        "creditCardHeading": "Choose the design you like and apply for card right now",
+        "creditCardBtn": "Choose the card",
+        "featuresHeading": "We Provide Many Features You Can Use",
+        "featuresText": "You can explore the features that we provide with fun and have their own functions each feature",
+        "featuresListItem1": "Powerful online protection",
+        "featuresListItem2": "Cashback without borders",
+        "featuresListItem3": "Personal design",
+        "featuresListItem4": "Work anywhere in the world",
+        "servicesHeading": "You can use our services anywhere in the world",
+        "servicesText": "Withdraw and transfer money online through our application",
+        "news": "Current news form the world of finance",
+        "newsText": "We update the news feed every 15 minutes. You can learn more by clicking on the news you are interested in.",
+        "support": "Support",
+        "subscribe": "Subscribe Newsletter & get",
+        "subscribeBankNews": "Bank News",
+        "supportBtn": "Subscribe"
+    },
+    "currencyConverter": {
+        "heading": "Exchange rate in internet bank",
+        "update_one": "Updates every minute, ",
+        "update_other": "Updates every {{count}} minutes, ",
+        "currency": "Currency",
+        "allCoursesBtn": "All courses",
+        "loading": "Loading..."
+    }
+}

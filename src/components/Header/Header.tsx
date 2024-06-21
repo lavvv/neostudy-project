@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import Navbar from "@components/Navbar/Navbar";
 import Button from "@components/ui/Button";
 import { headerRoutes } from "@routes/routes";
+import { useTranslation } from "react-i18next";
 import "./Header.scss";
 
 export default function Header() {
+  const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const burgerMenuIcon = <span>&#9776;</span>;
   const burgerMenuCloseIcon = <span>&#x2715;</span>;
@@ -20,7 +22,7 @@ export default function Header() {
 
         <Navbar className="Navbar Header__navbar" links={headerRoutes} />
         <Button className="Button Button--tall Button--borderRadius-m Header__button Header__button--large">
-          Online Bank
+          {t("header.bankBtn")}
         </Button>
 
         <div className="Header__smallMenu">
@@ -37,7 +39,7 @@ export default function Header() {
                 links={headerRoutes}
               />
               <Button className="Button Button--tall Button--borderRadius-m Header__button Header__button--small ">
-                Online Bank
+                {t("header.bankBtn")}
               </Button>
             </>
           )}

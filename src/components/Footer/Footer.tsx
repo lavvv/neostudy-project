@@ -2,9 +2,12 @@ import Navbar from "@components/Navbar/Navbar";
 import { footerRoutes } from "@routes/routes";
 
 import neoflexLogo from "@img/logo-neoflex.png";
+import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="Footer">
       <div className="Footer__container">
@@ -20,10 +23,10 @@ export default function Footer() {
           </a>
           <div className="Footer__contacts">
             <a className="Footer__phone" href="tel:+74959842513">
-              +7 (495) 984 25 13
+              {t("footer.phoneNumber")}
             </a>
             <a className="Footer__email" href="mailto:info@neoflex.ru">
-              info@neoflex.ru
+              {t("footer.email")}
             </a>
           </div>
         </section>
@@ -34,12 +37,7 @@ export default function Footer() {
 
         <hr className="Footer__divider"></hr>
 
-        <p className="Footer__info">
-          We use cookies to personalize our services and improve the user
-          experience of our website. Cookies are small files containing
-          information about previous visits to a website. If you do not want to
-          use cookies, please change your browser settings
-        </p>
+        <p className="Footer__info">{t("footer.cookiesDisclaimer")}</p>
       </div>
     </footer>
   );

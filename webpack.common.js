@@ -11,6 +11,8 @@ module.exports = {
       "@features": path.resolve(__dirname, "src/features"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routes": path.resolve(__dirname, "src/routes"),
+      "@utils": path.resolve(__dirname, "src/utils"),
+      "@locales": path.resolve(__dirname, "src/i18n/locales"),
     },
     extensions: [".tsx", ".ts", "..."],
   },
