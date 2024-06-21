@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
+import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 import { useTranslation } from "react-i18next";
 import { DEFAULT_PARAMS } from "../api/options";
-import { convertMinutesToMs } from "../helpers/convertMinutesToMs";
 import { getExchangeRatesList } from "../helpers/getExchangeRatesList";
 import "./ExchangeRatesList.scss";
 
@@ -55,7 +55,7 @@ export default function ExchangeRatesList({
               {rate}
             </li>
           ))
-        : t("currencyConverter.loading")}
+        : t("loading")}
     </ul>
   );
 }

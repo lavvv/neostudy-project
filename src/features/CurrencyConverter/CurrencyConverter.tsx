@@ -2,7 +2,7 @@ import Button from "@components/ui/Button";
 import "./CurrencyConverter.scss";
 import { TGetExchangeRateParams } from "./api/api";
 import ExchangeRatesList from "./components/ExchangeRatesList";
-import { getCurrentCityDate } from "./helpers/getCurrentCityDate";
+import { getCurrentLocationDate } from "./helpers/getCurrentLocationDate";
 
 import bankImg from "@img/home/bank.svg";
 import { useTranslation } from "react-i18next";
@@ -17,7 +17,7 @@ export default function CurrencyConverter({
   updateIntervalMinutes = 15,
 }: TCurrencyConverterListProps) {
   const { t } = useTranslation();
-  const currentCityDate = getCurrentCityDate();
+  const currentCityDate = getCurrentLocationDate();
 
   return (
     <article className="CurrencyConverter">
