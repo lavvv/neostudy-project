@@ -22,7 +22,6 @@
         "update_one": "Updates every minute, ",
         "update_other": "Updates every {{count}} minutes, ",
         "currency": "Currency",
-        "allCoursesBtn": "All courses",
-        "loading": "Loading..."
+        "allCoursesBtn": "All courses"
     }
 }
