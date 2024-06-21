@@ -70,7 +70,7 @@ export default function Index() {
 
       <section className="news">
         <h2 className="news__heading">{t("home.news")}</h2>
-        <p>{t("home.newsText")}</p>
+        <p className="news__text">{t("home.newsText")}</p>
       </section>
 
       <section className="pageBlock pageBlock--flex-column pageBlock--align-center support">
