@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import Loader from "@components/Loader/Loader";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 import { useTranslation } from "react-i18next";
 import { DEFAULT_PARAMS } from "../api/options";
@@ -48,14 +49,16 @@ export default function ExchangeRatesList({
 
   return (
     <ul className="ExchangeRatesList">
-      {exchangeRates
-        ? exchangeRates.map(({ from, rate, key }) => (
-            <li key={key}>
-              <span className="ExchangeRatesList__currencyFrom">{from}:</span>
-              {rate}
-            </li>
-          ))
-        : t("loading")}
+      {!exchangeRates ? (
+        <Loader height="3.5rem" />
+      ) : (
+        exchangeRates.map(({ from, rate, key }) => (
+          <li key={key}>
+            <span className="ExchangeRatesList__currencyFrom">{from}:</span>
+            {rate}
+          </li>
+        ))
+      )}
     </ul>
   );
 }
