@@ -1,0 +1,19 @@
+@use "@styles/variables" as *;
+
+.NewsCardsList {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(320px, 100%);
+  gap: 5rem;
+
+  max-width: 100%;
+  padding: 2rem 0.5rem;
+
+  overflow-x: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+
+  @media screen and (max-width: $max-width-tablet) {
+    overflow-x: scroll;
+  }
+}

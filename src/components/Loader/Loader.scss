@@ -1,0 +1,20 @@
+@use "@styles/variables" as *;
+
+.NewsReelLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $fs-xl;
+  text-align: center;
+
+  animation: color_change 800ms infinite alternate;
+
+  @keyframes color_change {
+    from {
+      color: $clr-gray-dark;
+    }
+    to {
+      color: $clr-gray-medium;
+    }
+  }
+}

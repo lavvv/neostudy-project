@@ -1,5 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 import Button from "@components/ui/Button";
 import CurrencyConverter from "@features/CurrencyConverter";
+import NewsReel from "@features/NewsReel/NewsReel";
 
 import cardImage1 from "@img/home/card-image1.png";
 import cardImage2 from "@img/home/card-image2.png";
@@ -9,7 +12,6 @@ import hugeGlobal from "@img/home/map-huge-global.png";
 import personLaptop from "@img/home/person-laptop.png";
 import emailIcon from "@img/icons/email-env.svg";
 import sendIcon from "@img/icons/send-pp.svg";
-import { useTranslation } from "react-i18next";
 import "./Home.scss";
 
 export default function Index() {
@@ -59,7 +61,6 @@ export default function Index() {
 
       <section className="pageBlock pageBlock--flex-column pageBlock--align-center services">
         <h2 className="services__heading">{t("home.servicesHeading")}</h2>
-
         <figure>
           <figcaption className="services__figcaption">
             {t("home.servicesText")}
@@ -71,6 +72,7 @@ export default function Index() {
       <section className="news">
         <h2 className="news__heading">{t("home.news")}</h2>
         <p className="news__text">{t("home.newsText")}</p>
+        <NewsReel />
       </section>
 
       <section className="pageBlock pageBlock--flex-column pageBlock--align-center support">
