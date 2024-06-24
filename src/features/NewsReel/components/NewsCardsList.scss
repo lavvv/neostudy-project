@@ -12,8 +12,9 @@
   overflow-x: hidden;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
+  scroll-padding: 0 0.5rem;
 
-  @media screen and (max-width: $max-width-tablet) {
+  @media screen and (max-width: $max-width-mobile) {
     overflow-x: scroll;
   }
 }

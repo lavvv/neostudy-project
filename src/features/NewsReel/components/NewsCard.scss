@@ -12,6 +12,7 @@
   background-color: $clr-white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.08);
   text-align: center;
+  scroll-snap-align: start;
 
   &__figure {
     display: flex;
@@ -48,5 +49,9 @@
     margin: 0;
     line-height: 1.5;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: $max-width-mobile) {
+    scroll-snap-align: center;
   }
 }

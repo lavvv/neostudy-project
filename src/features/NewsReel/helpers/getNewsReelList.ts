@@ -1,5 +1,5 @@
-import { TNewsCardProps } from "../NewsReel";
 import { getNewsReel } from "../api/api";
+import { TNewsCardProps } from "../components/NewsCardsList";
 
 export const getNewsReelList = function (controller?: AbortController) {
   const apiResponse = getNewsReel(controller);

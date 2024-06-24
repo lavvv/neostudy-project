@@ -1,14 +1,13 @@
 import { useRef } from "react";
 
-import Button from "@components/ui/Button";
-import arrowLeft from "@img/icons/arrow-left.svg";
-import arrowRight from "@img/icons/arrow-right.svg";
-
 import "./NewsReel.scss";
 import NewsCardsList from "./components/NewsCardsList";
+import NewsReelButtons from "./components/NewsReelButtons";
 
 export default function NewsReel({ updateIntervalMinutes = 15 }) {
   const newsCardsListRef = useRef<HTMLDivElement | null>(null);
+  const prevButtonRef = useRef<HTMLButtonElement | null>(null);
+  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
 
   const handlePrevClick = function () {
     newsCardsListRef.current?.scrollBy({
@@ -22,21 +21,42 @@ export default function NewsReel({ updateIntervalMinutes = 15 }) {
     });
   };
 
+  const handleButtonAppearance = function () {
+    if (newsCardsListRef.current == null) return;
+
+    const scrollableList = newsCardsListRef.current;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollableList;
+    const isScrolledToBeginning = scrollLeft < 10;
+    const isScrolledToEnd = scrollWidth - scrollLeft - clientWidth < 10;
+    const prevBtn = prevButtonRef.current;
+    const nextBtn = nextButtonRef.current;
+
+    if (isScrolledToBeginning) {
+      prevBtn?.classList.add("NewsReelButtons__button--disabled");
+    } else {
+      prevBtn?.classList.remove("NewsReelButtons__button--disabled");
+    }
+
+    if (isScrolledToEnd) {
+      nextBtn?.classList.add("NewsReelButtons__button--disabled");
+    } else {
+      nextBtn?.classList.remove("NewsReelButtons__button--disabled");
+    }
+  };
+
   return (
     <section className="NewsReel">
       <NewsCardsList
+        handleButtonAppearance={handleButtonAppearance}
         updateIntervalMinutes={updateIntervalMinutes}
         ref={newsCardsListRef}
       />
-
-      <div className="NewsReel__buttons">
-        <Button className="Button NewsReel__button" onClick={handlePrevClick}>
-          <img src={arrowLeft} alt="" width={24} height={24} />
-        </Button>
-        <Button className="Button NewsReel__button" onClick={handleNextClick}>
-          <img src={arrowRight} alt="" width={24} height={24} />
-        </Button>
-      </div>
+      <NewsReelButtons
+        prevButtonRef={prevButtonRef}
+        nextButtonRef={nextButtonRef}
+        handlePrevClick={handlePrevClick}
+        handleNextClick={handleNextClick}
+      />
     </section>
   );
 }

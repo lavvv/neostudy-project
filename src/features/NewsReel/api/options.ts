@@ -1,5 +1,5 @@
 export const NEWS_REEL_URL = "https://newsapi.org/v2/top-headlines";
-export const API_KEY = "012191e5964549789682e7f70baca1f3";
+export const API_KEY = "2e6a06bf2227458e9953db943d230255";
 export const HEADERS = {
   "X-Api-Key": API_KEY,
 };

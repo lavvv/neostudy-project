@@ -1,0 +1,30 @@
+@use "@styles/variables" as *;
+
+.NewsReelButtons {
+  display: flex;
+  align-self: flex-end;
+  margin-top: 1rem;
+  margin-left: auto;
+  gap: 1.25rem;
+
+  &__button {
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+    border: 1px solid;
+    border-radius: 50%;
+    color: $clr-blue;
+
+    &--disabled {
+      background-color: unset;
+
+      * {
+        stroke: $clr-black;
+      }
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+  }
+}

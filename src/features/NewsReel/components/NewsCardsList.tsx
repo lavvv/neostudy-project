@@ -15,7 +15,10 @@ export type TNewsCardProps = {
 };
 
 const NewsCardsList = forwardRef(function NewsCardsList(
-  { updateIntervalMinutes = 15 }: { updateIntervalMinutes?: number },
+  {
+    updateIntervalMinutes = 15,
+    handleButtonAppearance,
+  }: { updateIntervalMinutes?: number; handleButtonAppearance?: () => void },
   ref: React.Ref<HTMLDivElement>,
 ) {
   const [newsArticles, setNewsArticles] = useState<TNewsCardProps[]>();
@@ -51,7 +54,11 @@ const NewsCardsList = forwardRef(function NewsCardsList(
       {!newsArticles ? (
         <Loader height="32rem" />
       ) : (
-        <div className="NewsCardsList" ref={ref}>
+        <div
+          className="NewsCardsList"
+          ref={ref}
+          onScroll={handleButtonAppearance}
+        >
           {newsArticles.map(({ title, description, url, urlToImage }) => (
             <NewsCard
               key={title}
