@@ -31,16 +31,20 @@ export default function NewsReel({ updateIntervalMinutes = 15 }) {
     const prevBtn = prevButtonRef.current;
     const nextBtn = nextButtonRef.current;
 
-    if (isScrolledToBeginning) {
-      prevBtn?.classList.add("NewsReelButtons__button--disabled");
-    } else {
-      prevBtn?.classList.remove("NewsReelButtons__button--disabled");
+    if (isScrolledToBeginning && prevBtn) {
+      prevBtn.classList.add("NewsReelButtons__button--disabled");
+      prevBtn.disabled = true;
+    } else if (prevBtn) {
+      prevBtn.classList.remove("NewsReelButtons__button--disabled");
+      prevBtn.disabled = false;
     }
 
-    if (isScrolledToEnd) {
-      nextBtn?.classList.add("NewsReelButtons__button--disabled");
-    } else {
-      nextBtn?.classList.remove("NewsReelButtons__button--disabled");
+    if (isScrolledToEnd && nextBtn) {
+      nextBtn.classList.add("NewsReelButtons__button--disabled");
+      nextBtn.disabled = true;
+    } else if (nextBtn) {
+      nextBtn.classList.remove("NewsReelButtons__button--disabled");
+      nextBtn.disabled = false;
     }
   };
 
