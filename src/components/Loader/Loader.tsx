@@ -14,7 +14,7 @@ export default function Loader({ width, height }: TLoaderProps) {
   };
 
   return (
-    <div className="NewsReelLoader" style={style}>
+    <div className="Loader" style={style}>
       {t("loading")}
     </div>
   );
