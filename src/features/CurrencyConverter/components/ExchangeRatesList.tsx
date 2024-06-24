@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 import Loader from "@components/Loader/Loader";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
-import { useTranslation } from "react-i18next";
 import { DEFAULT_PARAMS } from "../api/options";
 import { getExchangeRatesList } from "../helpers/getExchangeRatesList";
 import "./ExchangeRatesList.scss";
@@ -17,7 +16,6 @@ export default function ExchangeRatesList({
   params = DEFAULT_PARAMS,
   updateIntervalMinutes = 15,
 }) {
-  const { t } = useTranslation();
   const [exchangeRates, setExchangeRates] =
     useState<TCurrencyConverterListItem[]>();
   const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
