@@ -26,15 +26,15 @@ const NewsCardsList = forwardRef(function NewsCardsList(
 
   useEffect(() => {
     const controller = new AbortController();
-
-    const setNews = function () {
-      getNewsReelList(controller)
-        .then((news) => {
-          if (!controller.signal.aborted) {
-            setNewsArticles([...news]);
-          }
-        })
-        .catch((error) => console.error(error));
+    const setNews = async function () {
+      try {
+        const news = await getNewsReelList(controller);
+        if (!controller.signal.aborted) {
+          setNewsArticles([...news]);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     setNews();

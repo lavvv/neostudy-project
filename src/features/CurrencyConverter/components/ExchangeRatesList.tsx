@@ -22,15 +22,15 @@ export default function ExchangeRatesList({
 
   useEffect(() => {
     const controller = new AbortController();
-
-    const setRates = function () {
-      getExchangeRatesList(params, controller)
-        .then((rates: TCurrencyConverterListItem[]) => {
-          if (!controller.signal.aborted) {
-            return setExchangeRates([...rates]);
-          }
-        })
-        .catch((error) => console.error(error));
+    const setRates = async function () {
+      try {
+        const rates = await getExchangeRatesList(params, controller);
+        if (!controller.signal.aborted) {
+          setExchangeRates([...rates]);
+        }
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     setRates();

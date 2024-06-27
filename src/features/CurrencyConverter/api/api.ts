@@ -8,30 +8,29 @@ export type TGetExchangeRateParams = {
   q?: string;
 };
 
-const getAllCurrencies = function (controller?: AbortController) {
-  return currencyConverterInstance
-    .get(ALL_CURRENCIES_URL, {
-      signal: controller?.signal,
-    })
-    .then((response) => response.data);
+const getAllCurrencies = async function (controller?: AbortController) {
+  const response = await currencyConverterInstance.get(ALL_CURRENCIES_URL, {
+    signal: controller?.signal,
+  });
+
+  return response.data;
 };
 
-const getExchangeRate = function (
+const getExchangeRate = async function (
   params: TGetExchangeRateParams,
   controller?: AbortController,
 ) {
   const { from, to, q = "1.0" } = params;
+  const response = await currencyConverterInstance.get(EXCHANGE_RATE_URL, {
+    signal: controller?.signal,
+    params: {
+      from,
+      to,
+      q,
+    },
+  });
 
-  return currencyConverterInstance
-    .get(EXCHANGE_RATE_URL, {
-      signal: controller?.signal,
-      params: {
-        from,
-        to,
-        q,
-      },
-    })
-    .then((response) => response.data);
+  return response.data;
 };
 
 const getExchangeRates = function (
