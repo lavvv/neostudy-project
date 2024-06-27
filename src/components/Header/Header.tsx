@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import Navbar from "@components/Navbar/Navbar";
-import Button from "@components/ui/Button";
+import { Navbar } from "@components/Navbar/Navbar";
+import { Button } from "@components/ui/Button";
 import { headerRoutes } from "@routes/routes";
-import { useTranslation } from "react-i18next";
+
 import "./Header.scss";
 
-export default function Header() {
+export function Header() {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
   const burgerMenuIcon = <span>&#9776;</span>;

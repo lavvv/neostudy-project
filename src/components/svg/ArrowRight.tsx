@@ -1,4 +1,4 @@
-export default function ArrowRight({
+export function ArrowRight({
   fill = "none",
   stroke = "none",
   width = 25,

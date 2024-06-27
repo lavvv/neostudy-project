@@ -7,7 +7,7 @@ type TLoaderProps = {
   height?: string;
 };
 
-export default function Loader({ width, height }: TLoaderProps) {
+export function Loader({ width, height }: TLoaderProps) {
   const style = {
     width,
     height,

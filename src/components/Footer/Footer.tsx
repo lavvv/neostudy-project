@@ -1,11 +1,12 @@
-import Navbar from "@components/Navbar/Navbar";
+import { useTranslation } from "react-i18next";
+
+import { Navbar } from "@components/Navbar/Navbar";
+import neoflexLogo from "@img/logo-neoflex.png";
 import { footerRoutes } from "@routes/routes";
 
-import neoflexLogo from "@img/logo-neoflex.png";
-import { useTranslation } from "react-i18next";
 import "./Footer.scss";
 
-export default function Footer() {
+export function Footer() {
   const { t } = useTranslation();
 
   return (

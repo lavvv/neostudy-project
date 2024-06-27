@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useState } from "react";
 
-import Loader from "@components/Loader/Loader";
+import { Loader } from "@components/Loader/Loader";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 
 import { getNewsReelList } from "../helpers/getNewsReelList";
-import NewsCard from "./NewsCard";
+import { NewsCard } from "./NewsCard";
 import "./NewsCardsList.scss";
 
 export type TNewsCardProps = {
@@ -14,7 +14,7 @@ export type TNewsCardProps = {
   urlToImage?: string;
 };
 
-const NewsCardsList = forwardRef(function NewsCardsList(
+export const NewsCardsList = forwardRef(function NewsCardsList(
   {
     updateIntervalMinutes = 15,
     handleButtonAppearance,
@@ -73,5 +73,3 @@ const NewsCardsList = forwardRef(function NewsCardsList(
     </>
   );
 });
-
-export default NewsCardsList;

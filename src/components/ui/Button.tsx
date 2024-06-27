@@ -7,7 +7,7 @@ type TButtonComponentProps = {
   btnRef?: React.RefObject<HTMLButtonElement>;
 };
 
-export default function Button({
+export function Button({
   children,
   className,
   onClick,

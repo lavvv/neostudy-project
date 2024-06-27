@@ -3,7 +3,7 @@ import imgPlaceholder from "@img/img-placeholder.svg";
 import "./NewsCard.scss";
 import { TNewsCardProps } from "./NewsCardsList";
 
-export default function NewsCard({
+export function NewsCard({
   title,
   description,
   url,

@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
-import Button from "@components/ui/Button";
-import CurrencyConverter from "@features/CurrencyConverter";
-import NewsReel from "@features/NewsReel/NewsReel";
+import { Button } from "@components/ui/Button";
+import { CurrencyConverter } from "@features/CurrencyConverter/CurrencyConverter";
+import { NewsReel } from "@features/NewsReel/NewsReel";
 
 import cardImage1 from "@img/home/card-image1.png";
 import cardImage2 from "@img/home/card-image2.png";
@@ -14,7 +14,7 @@ import emailIcon from "@img/icons/email-env.svg";
 import sendIcon from "@img/icons/send-pp.svg";
 import "./Home.scss";
 
-export default function Index() {
+export function Home() {
   const { t } = useTranslation();
 
   return (

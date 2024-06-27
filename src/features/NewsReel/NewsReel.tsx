@@ -1,10 +1,10 @@
 import { useRef } from "react";
 
+import { NewsCardsList } from "./components/NewsCardsList";
+import { NewsReelButtons } from "./components/NewsReelButtons";
 import "./NewsReel.scss";
-import NewsCardsList from "./components/NewsCardsList";
-import NewsReelButtons from "./components/NewsReelButtons";
 
-export default function NewsReel({ updateIntervalMinutes = 15 }) {
+export function NewsReel({ updateIntervalMinutes = 15 }) {
   const newsCardsListRef = useRef<HTMLDivElement | null>(null);
   const prevButtonRef = useRef<HTMLButtonElement | null>(null);
   const nextButtonRef = useRef<HTMLButtonElement | null>(null);

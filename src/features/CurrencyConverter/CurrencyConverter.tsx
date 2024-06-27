@@ -1,18 +1,19 @@
-import Button from "@components/ui/Button";
+import { useTranslation } from "react-i18next";
+
+import { Button } from "@components/ui/Button";
+import bankImg from "@img/home/bank.svg";
+
 import "./CurrencyConverter.scss";
 import { TGetExchangeRateParams } from "./api/api";
-import ExchangeRatesList from "./components/ExchangeRatesList";
+import { ExchangeRatesList } from "./components/ExchangeRatesList";
 import { getCurrentLocationDate } from "./helpers/getCurrentLocationDate";
-
-import bankImg from "@img/home/bank.svg";
-import { useTranslation } from "react-i18next";
 
 type TCurrencyConverterListProps = {
   params?: TGetExchangeRateParams[];
   updateIntervalMinutes?: number;
 };
 
-export default function CurrencyConverter({
+export function CurrencyConverter({
   params,
   updateIntervalMinutes = 15,
 }: TCurrencyConverterListProps) {

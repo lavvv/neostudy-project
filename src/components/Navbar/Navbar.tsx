@@ -12,7 +12,7 @@ type TNavbarProps = {
   links: TLink[];
 };
 
-export default function Navbar({ className, links }: TNavbarProps) {
+export function Navbar({ className, links }: TNavbarProps) {
   if (!links) return null;
 
   return (

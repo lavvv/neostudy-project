@@ -1,6 +1,6 @@
-import ArrowLeft from "@components/svg/ArrowLeft";
-import ArrowRight from "@components/svg/ArrowRight";
-import Button from "@components/ui/Button";
+import { ArrowLeft } from "@components/svg/ArrowLeft";
+import { ArrowRight } from "@components/svg/ArrowRight";
+import { Button } from "@components/ui/Button";
 
 import "./NewsReelButtons.scss";
 
@@ -11,7 +11,7 @@ type TNewsReelButtonsProps = {
   handleNextClick: () => void;
 };
 
-export default function NewsReelButtons({
+export function NewsReelButtons({
   prevButtonRef,
   nextButtonRef,
   handlePrevClick,
