@@ -2,17 +2,17 @@ import { NavLink } from "react-router-dom";
 
 import "./Navbar.scss";
 
-type TLink = {
+type Link = {
   href: string;
   text: string;
 };
 
-type TNavbarProps = {
+type Navbar = {
   className?: string;
-  links: TLink[];
+  links: Link[];
 };
 
-export function Navbar({ className, links }: TNavbarProps) {
+export function Navbar({ className, links }: Navbar) {
   if (!links) return null;
 
   return (

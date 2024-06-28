@@ -4,7 +4,7 @@ import { Button } from "@components/ui/Button";
 
 import "./NewsReelButtons.scss";
 
-type TNewsReelButtonsProps = {
+type NewsReelButtons = {
   prevButtonRef: React.RefObject<HTMLButtonElement>;
   nextButtonRef: React.RefObject<HTMLButtonElement>;
   handlePrevClick: () => void;
@@ -16,7 +16,7 @@ export function NewsReelButtons({
   nextButtonRef,
   handlePrevClick,
   handleNextClick,
-}: TNewsReelButtonsProps) {
+}: NewsReelButtons) {
   return (
     <div className="NewsReelButtons">
       <Button

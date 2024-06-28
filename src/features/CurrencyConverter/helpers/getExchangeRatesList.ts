@@ -1,7 +1,7 @@
-import { currencyConverterApi, TGetExchangeRateParams } from "../api/api";
+import { currencyConverterApi, ExchangeRate } from "../api/api";
 
 export async function getExchangeRatesList(
-  params: TGetExchangeRateParams[],
+  params: ExchangeRate[],
   controller?: AbortController,
 ) {
   const apiResponse = currencyConverterApi.getExchangeRates(params, controller);

@@ -5,7 +5,7 @@ declare module "*.svg" {
 
 declare module "*.png";
 
-declare interface ISVGProps {
+declare interface SvgProps {
   fill?: string;
   stroke?: string;
   width?: number;

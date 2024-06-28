@@ -7,7 +7,7 @@ import { DEFAULT_PARAMS } from "../api/options";
 import { getExchangeRatesList } from "../helpers/getExchangeRatesList";
 import "./ExchangeRatesList.scss";
 
-type TCurrencyConverterListItem = {
+type ExchangeRatesList = {
   from: string;
   rate: string;
   key: string;
@@ -17,8 +17,7 @@ export function ExchangeRatesList({
   params = DEFAULT_PARAMS,
   updateIntervalMinutes = 15,
 }) {
-  const [exchangeRates, setExchangeRates] =
-    useState<TCurrencyConverterListItem[]>();
+  const [exchangeRates, setExchangeRates] = useState<ExchangeRatesList[]>();
   const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
 
   useEffect(() => {

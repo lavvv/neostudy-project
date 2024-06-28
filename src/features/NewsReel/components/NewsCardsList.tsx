@@ -7,7 +7,7 @@ import { getNewsReelList } from "../helpers/getNewsReelList";
 import { NewsCard } from "./NewsCard";
 import "./NewsCardsList.scss";
 
-export type TNewsCardProps = {
+export type NewsCard = {
   title?: string;
   description?: string;
   url?: string;
@@ -21,7 +21,7 @@ export const NewsCardsList = forwardRef(function NewsCardsList(
   }: { updateIntervalMinutes?: number; handleButtonAppearance?: () => void },
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const [newsArticles, setNewsArticles] = useState<TNewsCardProps[]>();
+  const [newsArticles, setNewsArticles] = useState<NewsCard[]>();
   const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
 
   useEffect(() => {

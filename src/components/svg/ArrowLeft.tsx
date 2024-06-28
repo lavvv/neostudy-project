@@ -3,7 +3,7 @@ export function ArrowLeft({
   stroke = "none",
   width = 25,
   height = 26,
-}: ISVGProps) {
+}: SvgProps) {
   return (
     <svg
       width={width}

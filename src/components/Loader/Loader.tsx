@@ -2,12 +2,12 @@ import { t } from "i18next";
 
 import "./Loader.scss";
 
-type TLoaderProps = {
+type Loader = {
   width?: string;
   height?: string;
 };
 
-export function Loader({ width, height }: TLoaderProps) {
+export function Loader({ width, height }: Loader) {
   const style = {
     width,
     height,

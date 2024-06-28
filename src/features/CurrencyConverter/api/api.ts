@@ -2,7 +2,7 @@ import { currencyConverterInstance } from "./instance";
 
 import { ALL_CURRENCIES_URL, EXCHANGE_RATE_URL } from "./options";
 
-export type TGetExchangeRateParams = {
+export type ExchangeRate = {
   from: string;
   to: string;
   q?: string;
@@ -17,7 +17,7 @@ const getAllCurrencies = async function (controller?: AbortController) {
 };
 
 const getExchangeRate = async function (
-  params: TGetExchangeRateParams,
+  params: ExchangeRate,
   controller?: AbortController,
 ) {
   const { from, to, q = "1.0" } = params;
@@ -34,7 +34,7 @@ const getExchangeRate = async function (
 };
 
 const getExchangeRates = function (
-  params: TGetExchangeRateParams[],
+  params: ExchangeRate[],
   controller?: AbortController,
 ) {
   return Promise.allSettled(

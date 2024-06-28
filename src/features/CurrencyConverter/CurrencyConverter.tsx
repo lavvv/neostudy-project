@@ -4,19 +4,19 @@ import { Button } from "@components/ui/Button";
 import bankImg from "@img/home/bank.svg";
 
 import "./CurrencyConverter.scss";
-import { TGetExchangeRateParams } from "./api/api";
+import type { ExchangeRate } from "./api/api";
 import { ExchangeRatesList } from "./components/ExchangeRatesList";
 import { getCurrentLocationDate } from "./helpers/getCurrentLocationDate";
 
-type TCurrencyConverterListProps = {
-  params?: TGetExchangeRateParams[];
+type CurrencyConverter = {
+  params?: ExchangeRate[];
   updateIntervalMinutes?: number;
 };
 
 export function CurrencyConverter({
   params,
   updateIntervalMinutes = 15,
-}: TCurrencyConverterListProps) {
+}: CurrencyConverter) {
   const { t } = useTranslation();
   const currentCityDate = getCurrentLocationDate();
 
