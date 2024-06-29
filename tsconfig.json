@@ -3,10 +3,7 @@
     "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
     "noEmit": true,
     "isolatedModules": true,
@@ -24,7 +21,8 @@
       "@routes/*": ["./src/routes/*"],
       "@utils/*": ["./src/utils/*"],
       "@locales/*": ["./src/i18n/locales/*"],
-    },
+      "@constants/*": ["./src/constants/*"]
+    }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*"]
 }

@@ -7,12 +7,12 @@ type Link = {
   text: string;
 };
 
-type Navbar = {
+type NavbarProps = {
   className?: string;
   links: Link[];
 };
 
-export function Navbar({ className, links }: Navbar) {
+export function Navbar({ className, links }: NavbarProps) {
   if (!links) return null;
 
   return (

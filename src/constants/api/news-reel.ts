@@ -8,6 +8,7 @@ export const COUNTRY = "us";
 export const CATEGORY = "business";
 export const LIMIT = 30;
 export const TIMEOUT = 4000;
+export const DEFAULT_UPDATE_INTERVAL = 15;
 export const PARAMS = {
   country: COUNTRY,
   category: CATEGORY,

@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useState } from "react";
 
 import { Loader } from "@components/Loader/Loader";
+import { DEFAULT_UPDATE_INTERVAL } from "@constants/api/news-reel";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 
 import { getNewsReelList } from "../helpers/getNewsReelList";
@@ -10,7 +11,7 @@ import "./NewsCardsList.scss";
 
 export const NewsCardsList = forwardRef(function NewsCardsList(
   {
-    updateIntervalMinutes = 15,
+    updateIntervalMinutes = DEFAULT_UPDATE_INTERVAL,
     handleButtonAppearance,
   }: { updateIntervalMinutes?: number; handleButtonAppearance?: () => void },
   ref: React.Ref<HTMLDivElement>,

@@ -1,8 +1,7 @@
-import { currencyConverterInstance } from "./instance";
-
-import { ALL_CURRENCIES_URL, EXCHANGE_RATE_URL } from "./options";
+import { ALL_CURRENCIES_URL, EXCHANGE_RATE_URL, MONEY_QUANTITY } from "@constants/api/currency-converter";
 
 import { ExchangeRate } from "../types";
+import { currencyConverterInstance } from "./instance";
 
 const getAllCurrencies = async function (controller?: AbortController) {
   const response = await currencyConverterInstance.get(ALL_CURRENCIES_URL, {
@@ -16,7 +15,11 @@ const getExchangeRate = async function (
   params: ExchangeRate,
   controller?: AbortController,
 ) {
-  const { from, to, q = "1.0" } = params;
+  const {
+    fromCurrency: from,
+    toCurrency: to,
+    quantity: q = MONEY_QUANTITY,
+  } = params;
   const response = await currencyConverterInstance.get(EXCHANGE_RATE_URL, {
     signal: controller?.signal,
     params: {

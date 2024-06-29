@@ -13,6 +13,7 @@ module.exports = {
       "@routes": path.resolve(__dirname, "src/routes"),
       "@utils": path.resolve(__dirname, "src/utils"),
       "@locales": path.resolve(__dirname, "src/i18n/locales"),
+      "@constants": path.resolve(__dirname, "src/constants"),
     },
     extensions: [".tsx", ".ts", "..."],
   },

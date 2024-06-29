@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@components/ui/Button";
 import { CurrencyConverter } from "@features/CurrencyConverter/CurrencyConverter";
 import { NewsReel } from "@features/NewsReel/NewsReel";
-
 import cardImage1 from "@img/home/card-image1.png";
 import cardImage2 from "@img/home/card-image2.png";
 import cardImage3 from "@img/home/card-image3.png";
@@ -12,6 +11,7 @@ import hugeGlobal from "@img/home/map-huge-global.png";
 import personLaptop from "@img/home/person-laptop.png";
 import emailIcon from "@img/icons/email-env.svg";
 import sendIcon from "@img/icons/send-pp.svg";
+
 import "./Home.scss";
 
 export function Home() {
