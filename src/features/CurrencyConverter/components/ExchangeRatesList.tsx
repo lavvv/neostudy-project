@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 
 import { Loader } from "@components/Loader/Loader";
+import {
+  DEFAULT_PARAMS,
+  DEFAULT_UPDATE_INTERVAL,
+} from "@constants/api/currency-converter";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 
-import { DEFAULT_PARAMS } from "../api/options";
 import { getExchangeRatesList } from "../helpers/getExchangeRatesList";
+import type { ExchangeRatesList } from "../types";
 import "./ExchangeRatesList.scss";
-
-type ExchangeRatesList = {
-  from: string;
-  rate: string;
-  key: string;
-};
 
 export function ExchangeRatesList({
   params = DEFAULT_PARAMS,
-  updateIntervalMinutes = 15,
+  updateIntervalMinutes = DEFAULT_UPDATE_INTERVAL,
 }) {
   const [exchangeRates, setExchangeRates] = useState<ExchangeRatesList[]>();
   const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
@@ -50,9 +48,11 @@ export function ExchangeRatesList({
       {!exchangeRates ? (
         <Loader height="3.5rem" />
       ) : (
-        exchangeRates.map(({ from, rate, key }) => (
+        exchangeRates.map(({ fromCurrency, rate, key }) => (
           <li key={key}>
-            <span className="ExchangeRatesList__currencyFrom">{from}:</span>
+            <span className="ExchangeRatesList__currencyFrom">
+              {fromCurrency}:
+            </span>
             {rate}
           </li>
         ))

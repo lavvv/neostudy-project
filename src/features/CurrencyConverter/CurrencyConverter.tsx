@@ -1,22 +1,18 @@
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@components/ui/Button";
+import { DEFAULT_UPDATE_INTERVAL } from "@constants/api/currency-converter";
 import bankImg from "@img/home/bank.svg";
 
 import "./CurrencyConverter.scss";
-import type { ExchangeRate } from "./api/api";
 import { ExchangeRatesList } from "./components/ExchangeRatesList";
 import { getCurrentLocationDate } from "./helpers/getCurrentLocationDate";
-
-type CurrencyConverter = {
-  params?: ExchangeRate[];
-  updateIntervalMinutes?: number;
-};
+import type { CurrencyConverterProps } from "./types";
 
 export function CurrencyConverter({
   params,
-  updateIntervalMinutes = 15,
-}: CurrencyConverter) {
+  updateIntervalMinutes = DEFAULT_UPDATE_INTERVAL,
+}: CurrencyConverterProps) {
   const { t } = useTranslation();
   const currentCityDate = getCurrentLocationDate();
 

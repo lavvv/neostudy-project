@@ -2,11 +2,7 @@ import { currencyConverterInstance } from "./instance";
 
 import { ALL_CURRENCIES_URL, EXCHANGE_RATE_URL } from "./options";
 
-export type ExchangeRate = {
-  from: string;
-  to: string;
-  q?: string;
-};
+import { ExchangeRate } from "../types";
 
 const getAllCurrencies = async function (controller?: AbortController) {
   const response = await currencyConverterInstance.get(ALL_CURRENCIES_URL, {

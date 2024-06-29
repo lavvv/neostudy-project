@@ -2,21 +2,15 @@ import { ArrowLeft } from "@components/svg/ArrowLeft";
 import { ArrowRight } from "@components/svg/ArrowRight";
 import { Button } from "@components/ui/Button";
 
+import { NewsReelButtonsProps } from "../types";
 import "./NewsReelButtons.scss";
-
-type NewsReelButtons = {
-  prevButtonRef: React.RefObject<HTMLButtonElement>;
-  nextButtonRef: React.RefObject<HTMLButtonElement>;
-  handlePrevClick: () => void;
-  handleNextClick: () => void;
-};
 
 export function NewsReelButtons({
   prevButtonRef,
   nextButtonRef,
   handlePrevClick,
   handleNextClick,
-}: NewsReelButtons) {
+}: NewsReelButtonsProps) {
   return (
     <div className="NewsReelButtons">
       <Button

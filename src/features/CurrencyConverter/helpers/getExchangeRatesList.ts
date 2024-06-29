@@ -1,4 +1,5 @@
-import { currencyConverterApi, ExchangeRate } from "../api/api";
+import { currencyConverterApi } from "../api/api";
+import type { ExchangeRate } from "../types";
 
 export async function getExchangeRatesList(
   params: ExchangeRate[],
@@ -7,15 +8,15 @@ export async function getExchangeRatesList(
   const apiResponse = currencyConverterApi.getExchangeRates(params, controller);
   const responses = await apiResponse;
   const exchangeRatesList = responses.map((response, index) => {
-    const from = params[index].from;
-    const to = params[index].to;
-    const key = `${from}-${to}`;
+    const fromCurrency = params[index].fromCurrency;
+    const toCurrency = params[index].toCurrency;
+    const key = `${fromCurrency}-${toCurrency}`;
 
     const isSuccessfulResponse =
       response.status === "fulfilled" && typeof response.value === "number";
     const rate = isSuccessfulResponse ? response.value.toFixed(2) : "...";
 
-    const listItem = { from, rate, key };
+    const listItem = { fromCurrency, rate, key };
 
     return listItem;
   });

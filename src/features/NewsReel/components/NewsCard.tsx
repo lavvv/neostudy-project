@@ -1,9 +1,14 @@
 import imgPlaceholder from "@img/img-placeholder.svg";
 
+import type { NewsCardProps } from "../types";
 import "./NewsCard.scss";
-import type { NewsCard } from "./NewsCardsList";
 
-export function NewsCard({ title, description, url, urlToImage }: NewsCard) {
+export function NewsCard({
+  title,
+  description,
+  url,
+  urlToImage,
+}: NewsCardProps) {
   return (
     <article className="NewsCard">
       <a href={url}>

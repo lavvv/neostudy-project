@@ -4,15 +4,9 @@ import { Loader } from "@components/Loader/Loader";
 import { convertMinutesToMs } from "@utils/convertMinutesToMs";
 
 import { getNewsReelList } from "../helpers/getNewsReelList";
+import { NewsCardProps } from "../types";
 import { NewsCard } from "./NewsCard";
 import "./NewsCardsList.scss";
-
-export type NewsCard = {
-  title?: string;
-  description?: string;
-  url?: string;
-  urlToImage?: string;
-};
 
 export const NewsCardsList = forwardRef(function NewsCardsList(
   {
@@ -21,7 +15,7 @@ export const NewsCardsList = forwardRef(function NewsCardsList(
   }: { updateIntervalMinutes?: number; handleButtonAppearance?: () => void },
   ref: React.Ref<HTMLDivElement>,
 ) {
-  const [newsArticles, setNewsArticles] = useState<NewsCard[]>();
+  const [newsArticles, setNewsArticles] = useState<NewsCardProps[]>();
   const updateIntervalMs = convertMinutesToMs(updateIntervalMinutes);
 
   useEffect(() => {
